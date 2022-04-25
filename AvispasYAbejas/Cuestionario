@@ -1,0 +1,23 @@
+1) Sobre implementar funcionalidad:
+
+Los 3 tests no pasaron de una porque se fueron realizando por partes, cumpliendo simplemente con lo que pedia cada uno. 
+En el primer test se forzo el codigo para que simplemente lo pasara, simplemente devolviendo el valor que se pedia.
+En el segundo test se agrego un nuevo elemento y se genero una comunicacion entre los dos elementos que se tenian para devolver el valor que se pedia.
+Y el tercer test paso de una con los cambios que se habian aplicado en los dos elementos, anteriormente.
+
+Este tipo de implementancion resulta comoda y prolija porque se parte de la resolucion de tests simples, y cuando se llego a los mas complejos solo fue cuestion de modificar algunas pocas cosas.
+
+
+2) Sobre codigo repetido:
+
+Si, quedo codigo repetido en todas las avispas. Lo que falto fue aplicar alguna clase abstracta con las avispas.
+La responsabilidad de ver si hay alimento para reproducirse era de la Avispa. Porque es logico que la Avispa tenga que verificar si hay condiciones para reproducirse.
+No tendria sentido que fuera de otra forma. Por ejemplo, no seria logico que sea el Habitat el que verifique si hay alimento para que una Avispa pueda reproducirse. 
+
+
+3) Sobre codigo repetido 2:
+
+Los huevos se guardaron en variables internas de cada elemento.
+No se usaron Colecciones ni Diccionarios, no fueron necesarios para resolver los tests. 
+Obviamente se pudieron haber simplificado muchas cosas ya que con lo realizado habria que realizar muchas modficaciones para poder resolver problemas mas complejos.
+Pero el codigo alcanza para lo pedido en los tests. 
