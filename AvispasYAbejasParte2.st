@@ -1,3 +1,44 @@
+!classDefinition: #Lara category: 'AvispasYAbejasParte2'!
+DenotativeObject subclass: #Lara
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'AvispasYAbejasParte2'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'Lara class' category: 'AvispasYAbejasParte2'!
+Lara class
+	instanceVariableNames: 'huevosDeLara'!
+
+!Lara class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 21:36:28'!
+getCantidadDeHuevos
+	^huevosDeLara.! !
+
+!Lara class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 21:37:08'!
+inicializarValores
+	huevosDeLara := 0.! !
+
+!Lara class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 21:54:34'!
+intentarReproducirse
+	(Oriana getCantidadDeHuevos > 0) | (Ornella getCantidadDeHuevos > 0) | (Polly getCantidadDeHuevos > 0) ifTrue: [self reproducirse].
+	 ! !
+
+!Lara class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 21:47:26'!
+reproducirse
+	huevosDeLara := (huevosDeLara + 1).
+	Oriana restarUnHuevo.
+	Polly restarUnHuevo.
+	Ornella restarUnHuevo.! !
+
+
+!Lara class methodsFor: '--** private fileout/in **--' stamp: 'AC 4/24/2022 21:55:28'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	huevosDeLara := 0.! !
+
+
 !classDefinition: #NuevoHabitat category: 'AvispasYAbejasParte2'!
 DenotativeObject subclass: #NuevoHabitat
 	instanceVariableNames: ''
@@ -50,7 +91,11 @@ crearUnaOruga
 crearUnaPolilla
 	cantidadDePolillas := (cantidadDePolillas + 1).! !
 
-!NuevoHabitat class methodsFor: 'as yet unclassified' stamp: 'AC 4/23/2022 19:07:04'!
+!NuevoHabitat class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:31:34'!
+restarUnHuevoDeAvispa
+	huevosDeAvispas := (huevosDeAvispas - 1).! !
+
+!NuevoHabitat class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:14:02'!
 retrocederHabitatAlInicio
 	huevosDeAvispas := 0.
 	huevosDePolilla := 0.
@@ -58,7 +103,7 @@ retrocederHabitatAlInicio
 	cantidadDePolillas := 0.! !
 
 
-!NuevoHabitat class methodsFor: '--** private fileout/in **--' stamp: 'AC 4/23/2022 19:19:38'!
+!NuevoHabitat class methodsFor: '--** private fileout/in **--' stamp: 'AC 4/24/2022 21:55:28'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
@@ -79,11 +124,36 @@ DenotativeObject subclass: #Oriana
 
 !classDefinition: 'Oriana class' category: 'AvispasYAbejasParte2'!
 Oriana class
-	instanceVariableNames: ''!
+	instanceVariableNames: 'huevosDeOriana'!
 
-!Oriana class methodsFor: 'as yet unclassified' stamp: 'AC 4/23/2022 01:49:46'!
+!Oriana class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:03:16'!
+getCantidadDeHuevos
+	^huevosDeOriana.! !
+
+!Oriana class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:15:34'!
+inicializarValores
+	huevosDeOriana := 0.! !
+
+!Oriana class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 19:58:10'!
 intentarReproducirse
-	(NuevoHabitat cantidadDeOrugas > 0) ifTrue: [NuevoHabitat crearHuevoDeAvispa].! !
+	(NuevoHabitat cantidadDeOrugas > 0) ifTrue: [self reproducirse].! !
+
+!Oriana class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:05:32'!
+reproducirse
+	huevosDeOriana := (huevosDeOriana + 1).
+	NuevoHabitat crearHuevoDeAvispa.
+	! !
+
+!Oriana class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 21:40:28'!
+restarUnHuevo
+	huevosDeOriana := (huevosDeOriana - 1).! !
+
+
+!Oriana class methodsFor: '--** private fileout/in **--' stamp: 'AC 4/24/2022 21:55:28'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	huevosDeOriana := 0.! !
 
 
 !classDefinition: #Ornella category: 'AvispasYAbejasParte2'!
@@ -97,11 +167,38 @@ DenotativeObject subclass: #Ornella
 
 !classDefinition: 'Ornella class' category: 'AvispasYAbejasParte2'!
 Ornella class
-	instanceVariableNames: ''!
+	instanceVariableNames: 'huevosDeOrnella'!
 
-!Ornella class methodsFor: 'as yet unclassified' stamp: 'AC 4/23/2022 18:37:03'!
+!Ornella class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:18:30'!
+getCantidadDeHuevos
+	^huevosDeOrnella.! !
+
+!Ornella class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:17:15'!
+inicializarValores
+	huevosDeOrnella := 0.! !
+
+!Ornella class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 19:59:25'!
 intentarReproducirse
-	(NuevoHabitat cantidadDeOrugas > 0) ifTrue: [NuevoHabitat crearHuevoDeAvispa].! !
+	(NuevoHabitat cantidadDeOrugas > 0) ifTrue: [self reproducirse].! !
+
+!Ornella class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:35:48'!
+reproducirse
+	NuevoHabitat crearHuevoDeAvispa.
+	Oriana reproducirse.
+	NuevoHabitat crearUnaOruga.
+	NuevoHabitat restarUnHuevoDeAvispa.
+	huevosDeOrnella := (huevosDeOrnella + 1).! !
+
+!Ornella class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 21:46:30'!
+restarUnHuevo
+	huevosDeOrnella := (huevosDeOrnella - 1).! !
+
+
+!Ornella class methodsFor: '--** private fileout/in **--' stamp: 'AC 4/24/2022 21:55:28'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	huevosDeOrnella := 0.! !
 
 
 !classDefinition: #Polly category: 'AvispasYAbejasParte2'!
@@ -115,11 +212,35 @@ DenotativeObject subclass: #Polly
 
 !classDefinition: 'Polly class' category: 'AvispasYAbejasParte2'!
 Polly class
-	instanceVariableNames: ''!
+	instanceVariableNames: 'huevosDePolly'!
 
-!Polly class methodsFor: 'as yet unclassified' stamp: 'AC 4/23/2022 18:47:50'!
+!Polly class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:18:44'!
+getCantidadDeHuevos
+	^huevosDePolly.! !
+
+!Polly class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:17:25'!
+inicializarValores
+	huevosDePolly := 0.! !
+
+!Polly class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 19:59:58'!
 intentarReproducirse
-	(NuevoHabitat cantidadDePolillas > 0) ifTrue: [NuevoHabitat crearHuevoDeAvispa].! !
+	(NuevoHabitat cantidadDePolillas > 0) ifTrue: [self reproducirse].! !
+
+!Polly class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 20:21:21'!
+reproducirse
+	NuevoHabitat crearHuevoDeAvispa.
+	huevosDePolly := (huevosDePolly + 1).! !
+
+!Polly class methodsFor: 'as yet unclassified' stamp: 'AC 4/24/2022 21:46:56'!
+restarUnHuevo
+	huevosDePolly := (huevosDePolly - 1).! !
+
+
+!Polly class methodsFor: '--** private fileout/in **--' stamp: 'AC 4/24/2022 21:55:28'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	huevosDePolly := 0.! !
 
 
 !classDefinition: #PruebasReproduccionDeAvispas category: 'AvispasYAbejasParte2'!
@@ -331,21 +452,21 @@ test21CuandoLaraLaAvispaNoTieneRecursosNoDejaUnHuevo
 	Assert that: self cantidadDeHuevosConLaFirmaGeneticaDeLara isEqualTo: 0.! !
 
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'JMB 4/19/2022 19:14:52'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 21:52:27'!
 cantidadDeHuevosConLaFirmaGeneticaDeLara
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^Lara getCantidadDeHuevos.! !
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'JMB 4/19/2022 19:14:57'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 20:03:44'!
 cantidadDeHuevosConLaFirmaGeneticaDeOriana
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^Oriana getCantidadDeHuevos.! !
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'JMB 4/19/2022 19:15:03'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 20:19:57'!
 cantidadDeHuevosConLaFirmaGeneticaDeOrnella
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^Ornella getCantidadDeHuevos.! !
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'JMB 4/19/2022 19:15:09'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 20:20:30'!
 cantidadDeHuevosConLaFirmaGeneticaDePolly
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^Polly getCantidadDeHuevos.! !
 
 !PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/22/2022 22:48:45'!
 habitat
@@ -355,21 +476,25 @@ habitat
 hacerQueElHabitatTengaLosRecursosSuficientes
 	NuevoHabitat crearOrugasYPolillas! !
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'JMB 4/19/2022 19:14:28'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 21:37:33'!
 laAvispaLara
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	Lara inicializarValores.
+	^Lara.! !
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/22/2022 23:01:47'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 20:15:58'!
 laAvispaOriana
-	^Oriana! !
+	Oriana inicializarValores.
+	^Oriana.! !
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/23/2022 18:35:51'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 20:17:45'!
 laAvispaOrnella
-	^Ornella! !
+	Ornella inicializarValores.
+	^Ornella.! !
 
-!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/23/2022 18:43:41'!
+!PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/24/2022 20:18:05'!
 laAvispaPolly
-	^Polly
+	Polly inicializarValores.
+	^Polly.
 ! !
 
 !PruebasReproduccionDeAvispas class methodsFor: 'Para completar' stamp: 'AC 4/23/2022 01:45:26'!
@@ -392,4 +517,8 @@ queElHabitatTengaUnaPolillaMas
 retrocederElHabitatAlInicioDeLosTiempos
 	NuevoHabitat retrocederHabitatAlInicio! !
 
+Lara initializeAfterFileIn!
 NuevoHabitat initializeAfterFileIn!
+Oriana initializeAfterFileIn!
+Ornella initializeAfterFileIn!
+Polly initializeAfterFileIn!
