@@ -1,0 +1,17 @@
+1) Abstraccion de los tests 01 y 02
+
+Se creo una especie de calculadora de milisegundos.
+
+
+2) Como representar en Smalltalk
+
+¿Cuáles son las formas en que podemos representar entes de la realidad en Smalltalk que conocés?
+
+A traves de los objetos y metodos.
+
+¿qué cosas del lenguaje Smalltalk puedo usar para representar entidades de la realidad?
+
+Las clases que puedo instanciar. 
+
+
+ 
