@@ -1,0 +1,28 @@
+1) En un double dispatch (DD), ¿qué información aporta cada uno de los dos llamados?
+
+Con el primer llamado aporta la operacion que queremos realizar y el segundo con quien queremos realizar esa operacion.
+
+
+2) Con lo que vieron y saben hasta ahora, ¿donde les parece mejor tener la lógica de cómo instanciar un objeto? ¿por qué? ¿Y si se crea ese objeto desde diferentes lugares y de diferentes formas? ¿cómo lo resuelven?
+
+La logica es mejor tenerla en los metodos de clase porque es la clase la que debe saber como instanciarse. 
+
+Suponiendo que el objeto "Perro" se pueda instanciar desde la clase Animal y la clase Canino, lo que se me ocurre es hacer 
+que Canino herede de la clase Animal y que Perro sea instanciado desde Canino. 
+
+
+3) Con lo que vieron y trabajaron hasta ahora, ¿qué criterio están usando para categorizar métodos?
+
+Trato de especificar en el nombre del metodo lo que realiza ese metodo. 
+
+
+4) Si todas las subclases saben responder un mismo mensaje, ¿por qué ponemos ese mensaje sólo con un “self subclassResponsibility” en la superclase? ¿para qué sirve?
+
+Porque le dice a las clases que heredan de ella que tienen que tener ese metodo, pero deja la implementacion a cargo de cada clase
+que la hereda. 
+
+
+5) ¿Por qué está mal/qué problemas trae romper encapsulamiento?
+
+Poque se podria mostrar datos e informacion importante del objeto que puedan ser modificados, por alguien que no tenga derecho 
+a acceder a ellos, y esto altere el estado del objeto.  
